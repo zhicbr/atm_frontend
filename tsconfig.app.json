@@ -1,0 +1,15 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "noImplicitAny": false, //允许隐式声明 any 类型,暂时不了解什么意思，现阶段先关闭，不关闭也可以运行，但是有报错.很奇怪呀，比如只有    component: () => import("@@/ATM/MainAtm.vue"),，代码里的@@/ATM/MainAtm.vue报错，但是其他类似的就不报错
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
